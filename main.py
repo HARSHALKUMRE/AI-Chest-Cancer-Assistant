@@ -52,7 +52,7 @@ def img_to_base64(image_path):
         return None
     
 # Configure Google Generative AI
-genai.configure(api_key=os.getenv('GOOGLE_API_KEY'))
+genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
 # Set up the model
 generation_config = {
