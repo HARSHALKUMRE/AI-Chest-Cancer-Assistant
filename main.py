@@ -208,7 +208,6 @@ def services():
     
     st.title("AI Chest Cancer Assistant 👨‍⚕️ 🩺")
     st.subheader("An app to help with chest diease analysis using images and text")
-    google_api_key = st.secrets['GOOGLE_API_KEY']
 
     tab1, tab2 = st.tabs(["Image Analysis", "Text Query"])
 
@@ -277,6 +276,8 @@ page_bg_img = '''
 }
 </style>
 '''
+
+google_api_key = st.secrets['GOOGLE_API_KEY']
 
 # Inject the CSS into the Streamlit app
 st.markdown(page_bg_img, unsafe_allow_html=True)
