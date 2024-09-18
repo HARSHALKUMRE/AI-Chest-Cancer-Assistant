@@ -52,7 +52,7 @@ def img_to_base64(image_path):
         return None
     
 # Configure Google Generative AI
-genai.configure(api_key=st.secrets['GOOGLE_API_KEY'])
+genai.configure(api_key=os.getenv('GOOGLE_API_KEY'))
 
 # Set up the model
 generation_config = {
@@ -208,6 +208,8 @@ def services():
     
     st.title("AI Chest Cancer Assistant 👨‍⚕️ 🩺")
     st.subheader("An app to help with chest diease analysis using images and text")
+
+    os.environ["GOOGLE_API_KEY"] == st.secrets["GOOGLE_API_KEY"]
 
     tab1, tab2 = st.tabs(["Image Analysis", "Text Query"])
 
