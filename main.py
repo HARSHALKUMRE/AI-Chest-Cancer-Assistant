@@ -52,7 +52,7 @@ def img_to_base64(image_path):
         return None
     
 # Configure Google Generative AI
-genai.configure(api_key=google_api_key)
+genai.configure(api_key=st.secrets['GOOGLE_API_KEY'])
 
 # Set up the model
 generation_config = {
@@ -276,8 +276,6 @@ page_bg_img = '''
 }
 </style>
 '''
-
-google_api_key = st.secrets['GOOGLE_API_KEY']
 
 # Inject the CSS into the Streamlit app
 st.markdown(page_bg_img, unsafe_allow_html=True)
