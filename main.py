@@ -140,11 +140,11 @@ system_prompts = {
 }
 
 # Update the model initialization to use the new prompts
-model_image = genai.GenerativeModel(model_name="gemini-1.5-pro-latest",
+model_image = genai.GenerativeModel(model_name="gemini-2.5-pro",
                                     generation_config=generation_config,
                                     safety_settings=safety_settings)
 
-model_text = genai.GenerativeModel(model_name="gemini-1.5-pro-latest",
+model_text = genai.GenerativeModel(model_name="gemini-2.5-pro",
                                    generation_config=generation_config,
                                    safety_settings=safety_settings)
 
@@ -208,8 +208,6 @@ def services():
     
     st.title("AI Chest Cancer Assistant 👨‍⚕️ 🩺")
     st.subheader("An app to help with chest diease analysis using images and text")
-
-    os.environ["GOOGLE_API_KEY"] == st.secrets["GOOGLE_API_KEY"]
 
     tab1, tab2 = st.tabs(["Image Analysis", "Text Query"])
 
